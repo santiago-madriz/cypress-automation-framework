@@ -15,7 +15,7 @@ cypress-automation-framework/
 │   ├── fixtures/
 │   └── support/
 │       ├── commands.js
-│       └── index.js
+│       └── e2e.js
 │   
 ├── .gitignore
 ├── cypress.config.js
