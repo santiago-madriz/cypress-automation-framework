@@ -4,6 +4,7 @@ This repository contains an advanced Cypress automation framework for testing th
 
 ## Project Structure
 
+```plaintext
 cypress-automation-framework/
 ├── cypress/
 │   ├── e2e/
@@ -20,7 +21,7 @@ cypress-automation-framework/
 ├── cypress.config.js
 ├── package.json
 └── README.md
-
+```
 
 ## Installation
 
