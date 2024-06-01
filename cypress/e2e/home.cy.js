@@ -1,4 +1,3 @@
-// cypress/e2e/home_spec.cy.js
 describe('Home Page', () => {
   beforeEach(() => {
     cy.visit('https://santiagomadriz.com');
