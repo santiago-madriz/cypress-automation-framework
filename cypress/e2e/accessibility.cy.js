@@ -1,3 +1,5 @@
+import 'cypress-axe';
+
 describe('Accessibility Tests', () => {
     beforeEach(() => {
       cy.visit('https://santiagomadriz.com');
@@ -12,6 +14,7 @@ describe('Accessibility Tests', () => {
       const sections = ['#expertise', '#about', '#projects', '#certifications', '#work', '#contact'];
       sections.forEach(section => {
         cy.get(`[href="${section}"]`).click();
+        cy.injectAxe();
         cy.checkA11y(section);
       });
     });
