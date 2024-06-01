@@ -13,10 +13,10 @@ cypress-automation-framework/
 │   │   ├── sections.cy.js
 │   │   ├── accessibility.cy.js
 │   ├── fixtures/
-│   ├── support/
-│   │   ├── commands.js
-│   │   └── index.js
-│   └── plugins/
+│   └── support/
+│       ├── commands.js
+│       └── index.js
+│   
 ├── .gitignore
 ├── cypress.config.js
 ├── package.json
