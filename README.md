@@ -46,12 +46,13 @@ cypress-automation-framework/
 
 ### Open Cypress Test Runner
 
-#### To open the Cypress Test Runner and interactively run the tests:
-    ```bash
+-  To open the Cypress Test Runner and interactively run the tests:
+```bash
     npx cypress open
- ``` 
+``` 
+
 ###  Run Tests in Headless Mode
 
-#### To run all tests in headless mode (useful for CI/CD pipelines):
-    ```bash
+-  To run all tests in headless mode (useful for CI/CD pipelines):
+```bash
     npx cypress run
