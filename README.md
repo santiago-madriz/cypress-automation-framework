@@ -45,7 +45,7 @@ cypress-automation-framework/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/santiago-madriz/cypress-automation-framework.git
 cd cypress-automation-framework
 ```
 
@@ -246,8 +246,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👤 Author
 
 **Santiago Madriz**
-- QA Automation Engineer & RPA Developer
-- Email: espacioscreativos@hotmail.it
+- QA Automation Engineer 
+- Email: santiagomadrizc@gmail.com
 - LinkedIn: [Santiago Madriz](https://linkedin.com/in/santiago-madriz)
 
 ---
