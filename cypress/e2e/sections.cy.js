@@ -1,49 +1,60 @@
-// cypress/e2e/sections_spec.cy.js
+import ProductsPage from '../pages/ProductsPage';
+import BrandsPage from '../pages/BrandsPage';
+import ServicesPage from '../pages/ServicesPage';
+import BlogPage from '../pages/BlogPage';
+import FooterPage from '../pages/FooterPage';
+
 describe('Section Content', () => {
-    beforeEach(() => {
-      cy.visit('https://santiagomadriz.com');
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('should display the Products section content', () => {
+    ProductsPage.getProductsSection().should('be.visible');
+    ProductsPage.getProductByName('Molcajete').should('be.visible');
+    ProductsPage.getProductByName('Tequila Don Julio 1942').should('be.visible');
+    ProductsPage.getProductByName('Dulces de la Rosa - Mazapán').should('be.visible');
+  });
+
+  it('should display product categories and prices', () => {
+    ProductsPage.getProductCategories().forEach(category => {
+      cy.contains(category).should('be.visible');
     });
-  
-    it('should display the Expertise section content', () => {
-      cy.get('[href="#expertise"]').click();
-      cy.contains('Automation Testing');
-      cy.contains('Manual Testing');
-      cy.contains('RPA Development');
-    });
-  
-    it('should display the About Me section content', () => {
-      cy.get('[href="#about"]').click();
-      cy.contains('About Me');
-      cy.contains('Software Engineer');
-      cy.contains('QA Engineer');
-    });
-  
-    it('should display the Projects section content', () => {
-      cy.get('[href="#projects"]').click();
-      cy.contains('TEC AI');
-      cy.contains('Galería Mexicana');
-      cy.contains('Automation Framework');
-    });
-  
-    it('should display the Certifications section content', () => {
-      cy.get('[href="#certifications"]').click();
-      cy.contains('ISTQB Foundation Level - ASTQB');
-      cy.contains('Automation Infrastructure Fundamentals - UiPath');
-      cy.contains('RPA Developer - UiPath');
-      cy.contains('Support Engineer - UiPath');
-    });
-  
-    it('should display the Work Experience section content', () => {
-      cy.get('[href="#work"]').click();
-      cy.contains('QA Engineer - Konrad Group');
-      cy.contains('RPA Developer - Lanshore');
-      cy.contains('Support Engineer 3 - Tek Experts');
-    });
-  
-    it('should display the Contact section content', () => {
-      cy.get('[href="#contact"]').click();
-      cy.contains('Email:');
-      cy.contains('LinkedIn:');
-      cy.contains('GitHub:');
+    cy.contains('₡').should('be.visible');
+  });
+
+  it('should display the Brands section content', () => {
+    BrandsPage.scrollToBrands();
+    BrandsPage.getBrandsSection().should('be.visible');
+    BrandsPage.getAvailableBrands().forEach(brand => {
+      if (brand === 'Don Julio' || brand === 'Gran Malo' || brand === 'Tecate') {
+        BrandsPage.getBrandByName(brand).should('exist');
+      }
     });
   });
+
+  it('should display the Services section content', () => {
+    ServicesPage.scrollToServices();
+    ServicesPage.getServicesSection().should('be.visible');
+    ServicesPage.getAvailableServices().forEach(service => {
+      ServicesPage.getServiceByName(service).should('be.visible');
+    });
+  });
+
+  it('should display the Blog section content', () => {
+    BlogPage.scrollToBlog();
+    BlogPage.getBlogSection().should('be.visible');
+    BlogPage.validateBlogPrompt().should('be.visible');
+    BlogPage.getAvailableArticles().forEach(article => {
+      BlogPage.getBlogArticleByTitle(article).should('be.visible');
+    });
+  });
+
+  it('should display the Footer section content', () => {
+    FooterPage.scrollToFooter();
+    FooterPage.getContactInfo().phone.should('be.visible');
+    FooterPage.getContactInfo().location.should('be.visible');
+    FooterPage.getCompanyDescription().should('be.visible');
+    FooterPage.getCopyright().should('be.visible');
+  });
+});

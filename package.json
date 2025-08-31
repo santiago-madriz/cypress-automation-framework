@@ -1,16 +1,39 @@
 {
   "name": "cypress-automation-framework",
   "version": "1.0.0",
+  "description": "Professional Cypress automation framework for Galería Mexicana website testing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:spec": "cypress run --spec",
+    "lint": "eslint cypress/**/*.js",
+    "lint:fix": "eslint cypress/**/*.js --fix",
+    "report": "cypress run --reporter mochawesome",
+    "clean": "rm -rf cypress/screenshots cypress/videos mochawesome-report"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "cypress",
+    "e2e",
+    "testing",
+    "automation",
+    "qa",
+    "galeria-mexicana",
+    "page-object-model"
+  ],
+  "author": "Santiago Madriz",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.10.0",
-    "cypress-axe": "^1.5.0"
+    "cypress-axe": "^1.5.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-cypress": "^2.15.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.4.1",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
